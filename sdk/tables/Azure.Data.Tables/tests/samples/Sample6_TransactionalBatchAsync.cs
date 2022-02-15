@@ -94,7 +94,7 @@ namespace Azure.Data.Tables.Samples
             Response<IReadOnlyList<Response>> batchResult = tableClient.SubmitTransaction(batch);
 
             // Display the ETags for each item in the result.
-            // Note that the ordering between the entties in the batch and the responses in the batch responses will always be conssitent.
+            // Note that the ordering between the entites in the batch and the responses in the batch responses will always be consistent.
             for (int i = 0; i < batch.Count; i++)
             {
                 Console.WriteLine($"The ETag for the entity with RowKey: '{batch[i].Entity.RowKey}' is {batchResult.Value[i].Headers.ETag}");
